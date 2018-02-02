@@ -194,7 +194,7 @@ can raise an appropriate exception -- a Match_failure or
 Invalid_argument exception for instance.
 ......................................................................*)
 
-let max_list (lst : int list) : int =
+let rec max_list (lst : int list) : int =
   failwith "max_list not implemented" ;;
 
 (*......................................................................
@@ -299,14 +299,14 @@ Exercise 11: Reimplement sum using fold_left, naming it sum_ho (for
 ......................................................................*)
 
 let sum_ho (lst : int list) : int =
-  failwith "sum_ho not implemented" ;;
+List.fold_left (+) 0 lst;;
 
 (*......................................................................
 Exercise 12: Reimplement prods using map.
 ......................................................................*)
 
 let prods_ho (lst : (int * int) list) : int list =
-  failwith "prods_ho not implemented" ;;
+    List.map (fun (x, y) -> x * y) lst;;
 
 (*......................................................................
 Exercise 13: The OCaml List module provides, in addition to the map,
